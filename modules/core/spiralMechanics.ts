@@ -7,8 +7,8 @@ type Universe = {
 };
 type Universes = Record<string, Universe>;
 
-// Correct JSON import for NodeNext ESM
-import universesJson from '../scrolls/universes.json' assert { type: "json" };
+// TypeScript 5.5+: use `with { type: "json" }` for JSON imports
+import universesJson from '../scrolls/universes.json' with { type: "json" };
 const universes = universesJson as Universes;
 
 export interface CommandInput {

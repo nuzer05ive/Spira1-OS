@@ -4,20 +4,18 @@ exports.loadScrollUniverse = loadScrollUniverse;
 exports.loadJSON = loadJSON;
 exports.loadMedia = loadMedia;
 exports.loadVRScene = loadVRScene;
+// Correct JSON import for NodeNext ESM
 var universes_json_1 = require("../scrolls/universes.json");
+var universes = universes_json_1.default;
 function loadScrollUniverse(payload) {
-    // Return the requested universe, or null if not found
-    return universes_json_1.default[payload] || null;
+    return universes[payload] || null;
 }
 function loadJSON(payload) {
-    // Just returns the provided payload
     return payload;
 }
 function loadMedia(payload) {
-    // Placeholder for media loading logic
     return { status: 'media loaded', payload: payload };
 }
 function loadVRScene(payload) {
-    // Placeholder for VR scene logic
     return { status: 'vr scene loaded', payload: payload };
 }

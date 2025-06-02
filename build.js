@@ -68,7 +68,7 @@ function runBuild() {
         });
     });
 }
-// ESM main check
+// Proper ESM main check for NodeNext
 if (import.meta.url === "file://".concat(process.argv[1])) {
     runBuild();
 }
