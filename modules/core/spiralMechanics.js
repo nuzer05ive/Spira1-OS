@@ -4,7 +4,7 @@ exports.loadScrollUniverse = loadScrollUniverse;
 exports.loadJSON = loadJSON;
 exports.loadMedia = loadMedia;
 exports.loadVRScene = loadVRScene;
-// Correct JSON import for NodeNext ESM
+// TypeScript 5.5+: use `with { type: "json" }` for JSON imports
 var universes_json_1 = require("../scrolls/universes.json");
 var universes = universes_json_1.default;
 function loadScrollUniverse(payload) {
