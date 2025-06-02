@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "nodenext",
+    "target": "ES2020",
+    "module": "ESNext",
     "moduleResolution": "nodenext",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
     "strict": true,
-    "outDir": "."
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "outDir": "./dist"
   },
-  "include": ["**/*.ts"]
+  "include": [
+    "./**/*.ts"
+  ]
 }
