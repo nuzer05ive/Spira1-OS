@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "ts-node --loader ts-node/esm build.ts",
+    "build": "npx ts-node --loader ts-node/esm build.ts",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "vitest",
@@ -14,14 +14,15 @@
     "aframe": "^1.5.0",
     "chroma-js": "^2.4.2",
     "howler": "^2.2.4",
-    "mitt": "^3.0.1"
+    "mitt": "^3.0.1",
+    "pandoc-bin": "^3.1.6"
   },
   "devDependencies": {
-  "@types/node": "^20",
-  "typescript": "^5.5",
-  "vite": "^5",
-  "eslint": "^9",
-  "vitest": "^1",
-  "ts-node": "^10"
+    "@types/node": "^20",
+    "typescript": "^5.5",
+    "ts-node": "^10",
+    "vite": "^5",
+    "eslint": "^9",
+    "vitest": "^1"
   }
 }
