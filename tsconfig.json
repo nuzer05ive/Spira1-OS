@@ -9,8 +9,5 @@
     "strict": true,
     "outDir": "."
   },
-  "include": [
-    "build.ts",
-    "modules/**/*.ts"
-  ]
+  "include": ["**/*.ts"]
 }
