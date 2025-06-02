@@ -69,5 +69,6 @@ function runBuild() {
     });
 }
 // ESM main check
-if (import.meta.url === "file://".concat(process.argv[1]))
+if (import.meta.url === "file://".concat(process.argv[1])) {
     runBuild();
+}
