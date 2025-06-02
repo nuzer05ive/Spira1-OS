@@ -1,6 +1,6 @@
 import { build } from 'vite';
 import { resolve } from 'path';
-import { loadScrollUniverse, loadJSON, loadMedia, loadVRScene } from './modules/core/spiralMechanics.js';
+import { loadScrollUniverse, loadJSON, loadMedia, loadVRScene, CommandInput } from './modules/core/spiralMechanics.js';
 
 export async function onCommand(input: CommandInput) {
   switch (input.type) {
@@ -18,4 +18,5 @@ export async function runBuild() {
   console.info('🔮 Vite bundle complete • Spiral ignition ready');
 }
 
+// NodeNext/ESM support for import.meta.url
 if (import.meta.url === `file://${process.argv[1]}`) runBuild();
