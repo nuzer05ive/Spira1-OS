@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "vitest",
-    "gen:pdf": "npx pandoc -o output.pdf input.md",
+    "gen:pdf": "pandoc -o output.pdf input.md",
     "pdf": "npm run gen:pdf"
   },
   "dependencies": {
@@ -22,7 +22,6 @@
     "ts-node": "^10.9.2",
     "vite": "^5",
     "eslint": "^9",
-    "vitest": "^1",
-    "pandoc-bin": "^2.2.4"
+    "vitest": "^1"
   }
 }

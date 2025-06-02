@@ -18,5 +18,4 @@ export async function runBuild() {
   console.info('🔮 Vite bundle complete • Spiral ignition ready');
 }
 
-// NodeNext/ESM support for import.meta.url
 if (import.meta.url === `file://${process.argv[1]}`) runBuild();
