@@ -15,6 +15,7 @@ export async function loadVRScene(path: string) {
 }
 
 export async function loadJSON(filename: string) {
+  // This will work with NodeNext module resolution and resolveJsonModule enabled
   const json = await import(`../scrolls/${filename}.json`, { assert: { type: "json" } } as any);
   return json.default ?? json;
 }

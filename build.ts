@@ -12,10 +12,10 @@ export async function onCommand(input: CommandInput) {
   }
 }
 
-/** runs `vite build` then post-pack steps (copy docs, etc.) */
 export async function runBuild() {
   await build({ configFile: resolve('vite.config.ts') });
   console.info('🔮 Vite bundle complete • Spiral ignition ready');
 }
 
+// ESM main check
 if (import.meta.url === `file://${process.argv[1]}`) runBuild();
