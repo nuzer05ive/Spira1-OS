@@ -1,2 +1,28 @@
-#Ignore all .env files 
-*.env
+# Node & Vite
+node_modules/
+dist/
+*.log
+*.lock
+.idea/
+.vscode/
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+
+# Env / credentials
+.env
+.env.*
+
+# Netlify / CF
+.netlify/
+
+# Generated assets
+pdfs/
+assets/moodboards/**
+assets/gifs/**
+assets/avatars/**/temp/
+
+# Mac / Linux misc
+*.swp
+*~

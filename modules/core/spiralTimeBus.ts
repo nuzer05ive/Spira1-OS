@@ -1,12 +1,16 @@
-type EventKey = 'doorway†' | 'wobble≈' | string;
+import mitt from 'mitt';
 
-class SpiralTimeBus {
-  #listeners = new Map<EventKey, Set<(...a:any)=>void>>();
-  on(event: EventKey, fn: (...a:any)=>void){
-    this.#listeners.get(event)?.add(fn) ?? this.#listeners.set(event,new Set([fn]));
-  }
-  off(event: EventKey, fn: (...a:any)=>void){ this.#listeners.get(event)?.delete(fn); }
-  emit(event: EventKey, ...payload:any){ this.#listeners.get(event)?.forEach(f=>f(...payload)); }
+export type DoorwayEvt = { type:'doorway'; petal:number; loops:number; ts:number };
+export type WobbleEvt  = { type:'wobble'; ticks:number; ts:number };
+
+type Events = { doorway: DoorwayEvt; wobble: WobbleEvt };
+
+export const bus = mitt<Events>();
+
+/** Emit doorway (every **n** petals) and wobble (every 3rd) */
+export function emitDoorway(petal: number, loops: number){
+  const ts = Date.now();
+  bus.emit('doorway', { type:'doorway', petal, loops, ts });
+  if ((petal + 1) % 3 === 0)
+    bus.emit('wobble', { type:'wobble', ticks: petal, ts });
 }
-
-export const TimeBus = new SpiralTimeBus();

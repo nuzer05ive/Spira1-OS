@@ -6,18 +6,22 @@
     "build": "ts-node build.ts",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "vitest"
+    "test": "vitest",
+    "gen:pdf": "bash ./generate_pdfs.sh",
+    "pdf": "npm run gen:pdf"
   },
   "dependencies": {
     "aframe": "^1.5.0",
     "chroma-js": "^2.4.2",
-    "howler": "^2.2.4"
+    "howler": "^2.2.4",
+    "mitt": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "typescript": "^5.5",
     "vite": "^5",
     "eslint": "^9",
-    "vitest": "^1"
+    "vitest": "^1",
+    "pandoc-bin": "^4.2.0"
   }
 }

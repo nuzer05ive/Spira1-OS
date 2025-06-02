@@ -1,0 +1,20 @@
+name: lint-test-build
+on:
+  push:
+    branches: [ core ]
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 18 }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+      - run: chmod +x generate_pdfs.sh && ./generate_pdfs.sh
+      - run: npm run build
+
+# Netlify deploy is *not* triggered here—its native webhook handles that
