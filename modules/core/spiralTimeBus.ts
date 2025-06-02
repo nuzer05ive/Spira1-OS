@@ -1,11 +1,13 @@
-import mitt, { Emitter } from 'mitt';
+import * as mittImport from 'mitt';
+import type { Emitter } from 'mitt';
 
 export type DoorwayEvt = { type: 'doorway'; petal: number; loops: number; ts: number };
 export type WobbleEvt  = { type: 'wobble'; ticks: number; ts: number };
 
 type Events = { doorway: DoorwayEvt; wobble: WobbleEvt };
 
-// Create the emitter and assert its type
+// Robust ESM+TypeScript compatibility: access .default if present, else use as is
+const mitt = (mittImport as any).default || mittImport;
 export const bus = mitt() as Emitter<Events>;
 
 /** Emit doorway (every **n** petals) and wobble (every 3rd) */
