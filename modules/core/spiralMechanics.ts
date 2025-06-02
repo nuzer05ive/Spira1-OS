@@ -1,11 +1,11 @@
 import { assertPhiCompliance } from './phiAssert.js';
-import universes from '../scrolls/universes.json' assert { type: 'json' };
+import universes from '../scrolls/universes.json';
 import { bus, emitDoorway } from './spiralTimeBus.js';
 
 export function loadScrollUniverse(name: string) {
   const u = universes[name];
   assertPhiCompliance(u); // ε₀ wobble + φ-index check
-  emitDoorway(u.meta.petal ?? 0, u.meta.loops ?? 0);
+  emitDoorway(u.meta?.petal ?? 0, u.meta?.loops ?? 0);
   return u;
 }
 
@@ -15,8 +15,8 @@ export async function loadVRScene(path: string) {
 }
 
 export async function loadJSON(filename: string) {
-  // This will work with NodeNext module resolution and resolveJsonModule enabled
-  const json = await import(`../scrolls/${filename}.json`, { assert: { type: "json" } } as any);
+  // TypeScript will allow this with resolveJsonModule enabled
+  const json = await import(`../scrolls/${filename}.json`);
   return json.default ?? json;
 }
 
