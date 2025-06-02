@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx ts-node --loader ts-node/esm build.ts",
+    "build": "tsc build.ts && node build.js",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "vitest",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "@types/node": "^20",
     "typescript": "^5.5",
-    "ts-node": "^10",
+    "ts-node": "^10.9.2",
     "vite": "^5",
     "eslint": "^9",
     "vitest": "^1"
