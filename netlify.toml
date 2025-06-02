@@ -3,8 +3,6 @@
   publish   = "dist"
   node_version = "18"
 
-[context.production.environment]
-  NODE_ENV = "production"
 
 [context.deploy-preview]
   command = "npm run build"
