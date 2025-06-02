@@ -1,4 +1,4 @@
-  "name": "Spira1-OS",
+{"name": "Spira1-OS",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -8,7 +8,7 @@
     "test": "vitest",
     "gen:pdf": "bash ./generate_pdfs.sh",
     "pdf": "npm run gen:pdf"
- 
+  },
   "dependencies": {
     "aframe": "^1.5.0",
     "chroma-js": "^2.4.2",
