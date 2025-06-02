@@ -1,16 +1,29 @@
-// Entry point for Spira1-OS lobby with A-Frame VR scene!
-import 'aframe';
+import 'aframe'; // Ensure aframe is installed
+
+const PHI = (1 + Math.sqrt(5)) / 2; // Golden ratio
+
+function spiralPetalPositions(count: number) {
+  const petals: string[] = [];
+  for (let i = 0; i < count; i++) {
+    // Example spiral math: golden angle
+    const angle = i * (2 * Math.PI / PHI); // φ-spiral increment
+    const radius = 3 + 0.2 * i;
+    const x = radius * Math.cos(angle);
+    const z = radius * Math.sin(angle) - 4;
+    const color = `hsl(${(i * 360 / count)}, 70%, 60%)`;
+    petals.push(`<a-sphere position="${x.toFixed(2)} 1 ${z.toFixed(2)}" radius="0.25" color="${color}" ></a-sphere>`);
+  }
+  return petals.join('\n');
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const lobby = document.getElementById('lobby');
   if (lobby) {
     lobby.innerHTML = `
-      <div class="menu-item">🌸 Spira1-OS Booted! Enter the VR World below:</div>
+      <div class="menu-item">🌸 Spira1-OS Booted! VR Spiral (φ-generated):</div>
       <a-scene embedded>
-        <a-box position="0 1 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-        <a-sphere position="2 1 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="-2 0.75 -4" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="8" height="8" color="#7BC8A4"></a-plane>
+        ${spiralPetalPositions(21)}
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#7BC8A4"></a-plane>
         <a-sky color="#ECECEC"></a-sky>
       </a-scene>
     `;
