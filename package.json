@@ -1,4 +1,4 @@
-{
+{{
   "name": "Spira1-OS",
   "type": "module",
   "scripts": {
@@ -14,14 +14,14 @@
     "aframe": "^1.5.0",
     "chroma-js": "^2.4.2",
     "howler": "^2.2.4",
-    "mitt": "^3.0.1"
+    "mitt": "^3.0.1",
+    "pandoc-bin": "^3.7.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
     "typescript": "^5.5",
     "vite": "^5",
     "eslint": "^9",
-    "vitest": "^1",
-    "pandoc-bin": "^3.7.0"
+    "vitest": "^1"
   }
 }
