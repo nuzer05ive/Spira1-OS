@@ -1,5 +1,3 @@
-// Example spiralMechanics.ts with JSON import, assuming your tsconfig supports resolveJsonModule
-
 import universes from '../scrolls/universes.json';
 
 export interface CommandInput {
@@ -8,21 +6,21 @@ export interface CommandInput {
 }
 
 export function loadScrollUniverse(payload: any) {
-  // Example: return relevant universe
+  // Return the requested universe, or null if not found
   return universes[payload] || null;
 }
 
 export function loadJSON(payload: any) {
-  // Example: Just returns the payload, or could load JSON from disk/server
+  // Just returns the provided payload
   return payload;
 }
 
 export function loadMedia(payload: any) {
-  // Example: Would handle media loading
+  // Placeholder for media loading logic
   return { status: 'media loaded', payload };
 }
 
 export function loadVRScene(payload: any) {
-  // Example: Would handle VR scene logic
+  // Placeholder for VR scene logic
   return { status: 'vr scene loaded', payload };
 }
