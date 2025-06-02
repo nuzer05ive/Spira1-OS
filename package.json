@@ -23,6 +23,6 @@
     "vite": "^5",
     "eslint": "^9",
     "vitest": "^1",
-    "pandoc-bin": "^3.1.6"
+    "pandoc-bin": "^2.2.4"
   }
 }
