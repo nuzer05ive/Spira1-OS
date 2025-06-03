@@ -137,6 +137,14 @@ export default function App() {
   // UI
   return (
     <main className="w-screen h-screen bg-black relative flex flex-col items-center justify-center">
+      {/* 🌸 TAILWIND TEST BLOCK (remove after confirming!) */}
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50">
+        <div className="bg-indigo-500 text-white text-lg font-bold rounded-2xl px-8 py-4 shadow-lg border-2 border-white">
+          Tailwind is working!
+        </div>
+      </div>
+      {/* --- end test block --- */}
+
       {/* Glow phase overlay */}
       <div
         className="absolute inset-0 z-10 pointer-events-none transition-all duration-400"
